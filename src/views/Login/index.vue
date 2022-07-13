@@ -5,7 +5,7 @@
         <van-icon name="arrow-left" />
       </template>
     </van-nav-bar>
-    <van-form @submit="onSubmit">
+    <van-form @submit="login">
       <van-field
         v-model="username"
         name="用户名"
@@ -32,6 +32,7 @@
 </template>
 
 <script>
+import { login } from '@/api/login'
 export default {
   data () {
     return {
@@ -43,7 +44,11 @@ export default {
     onSubmit (values) {
       console.log('submit', values)
     },
-    onClickLeft () {}
+    onClickLeft () {},
+    async login () {
+      const res = await login(this.username, this.password)
+      console.log(res)
+    }
   }
 }
 </script>
