@@ -41,9 +41,6 @@ export default {
     }
   },
   methods: {
-    onSubmit (values) {
-      console.log('submit', values)
-    },
     onClickLeft () {},
     async login () {
       const res = await login(this.username, this.password)
