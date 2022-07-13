@@ -29,14 +29,13 @@ module.exports = {
 
       rootValue ({ file }) {
         return file.indexOf('vant') !== -1 ? 37.5 : 75
-      },
+      }
 
       //   rootValue: 37.5,
 
       // 配置要转换的 CSS 属性
       //   propList: ['height']
       // * 表示所有属性
-      propList: ['*']
     }
   }
 }
