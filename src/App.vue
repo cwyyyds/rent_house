@@ -3,7 +3,9 @@
     <router-view></router-view>
   </div>
 </template>
-
+<script>
+export default {}
+</script>
 <style lang="less">
 .van-nav-bar__content {
   background-color: #21b97a;
