@@ -85,8 +85,8 @@ export default {
     clearFn () {
       this.$dialog
         .confirm({
-          title: '标题',
-          message: '弹窗内容'
+          title: '提示',
+          message: '是否确认退出'
         })
         .then(() => {
           // on confirm
