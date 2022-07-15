@@ -1,17 +1,18 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-
+import { getToken, setToken } from '@/utils'
 Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-  },
-  getters: {
+    // 用户的登录状态信息
+    user: getToken()
+    // user: null
   },
   mutations: {
-  },
-  actions: {
-  },
-  modules: {
+    setUser (state, user) {
+      state.user = user
+      setToken(user)
+    }
   }
 })

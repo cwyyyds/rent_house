@@ -14,6 +14,11 @@ const routes = [
     component: () => import('@/views/Login')
   },
   {
+    path: '/favorite',
+    name: 'favorite',
+    component: () => import('@/views/Favorite')
+  },
+  {
     path: '/home',
     name: 'home',
     component: () => import('@/views/Home'),
@@ -27,6 +32,11 @@ const routes = [
         path: 'information',
         name: 'information',
         component: () => import('@/views/Information')
+      },
+      {
+        path: 'homepage',
+        name: 'homepage',
+        component: () => import('@/views/HomePage')
       }
     ]
   }

@@ -10,14 +10,14 @@
       <!-- 账号密码 -->
       <van-field
         v-model="username"
-        name="用户名"
+        name="user"
         placeholder="请输入账号"
         :rules="[{ required: true, message: '请填写用户名' }]"
       />
       <van-field
         v-model="password"
         type="password"
-        name="密码"
+        name="password"
         placeholder="请输入密码"
         :rules="[{ required: true, message: '请填写密码' }]"
       />
@@ -36,12 +36,13 @@
 
 <script>
 import { login } from '@/api/login'
+// 给兄弟组件接收用户名
 export default {
   data () {
     return {
       username: '',
       password: '',
-      UserInformationList: [],
+      unUserName: '',
       timer: null
     }
   },
@@ -54,16 +55,18 @@ export default {
       if (res.data.status === 200) {
         // 节流
         if (!this.timer) {
-          this.UserInformationList = res.data
-          this.$toast.success('登录成功')
+          this.unUserName = res.config.data
+          this.$toast.success(res.data.description)
+          console.log(res)
           this.timer = setTimeout(() => {
-            console.log(res)
+            console.log(this.$store)
+            this.$store.commit('setUser', res.data.body.token)
+            localStorage.setItem('userlist', res.config.data)
             this.$router.push({
               name: 'mypage'
             })
-          }, 2000)
+          }, 500)
         }
-
         return
       }
 
