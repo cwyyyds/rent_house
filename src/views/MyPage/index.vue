@@ -77,7 +77,7 @@ export default {
   data () {
     return {
       isShow: true,
-      unUserName: ''
+      unUserName: '游客'
     }
   },
   methods: {
@@ -100,9 +100,9 @@ export default {
   },
   created () {
     this.isShow = !this.$store.state.user
-    const newname = JSON.parse(localStorage.getItem('userlist')).username
-    if (newname) {
-      this.unUserName = newname
+    const namelist = JSON.parse(localStorage.getItem('userlist'))
+    if (namelist) {
+      this.unUserName = namelist.username
     }
   }
 }
