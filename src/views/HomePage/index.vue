@@ -223,7 +223,7 @@ export default {
   }
   //主要内容
   ul {
-    height: 140px;
+    height: 128px;
     display: flex;
     width: 103%;
     flex-wrap: wrap;
@@ -234,6 +234,7 @@ export default {
       margin-bottom: 10px;
       background-color: #fff;
       border-radius: 5px;
+      height: 58px;
       .hSA-main-left {
         img {
           width: 50px;
