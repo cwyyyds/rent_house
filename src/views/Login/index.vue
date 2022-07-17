@@ -57,9 +57,7 @@ export default {
         if (!this.timer) {
           this.unUserName = res.config.data
           this.$toast.success(res.data.description)
-          console.log(res)
           this.timer = setTimeout(() => {
-            console.log(this.$store)
             this.$store.commit('setUser', res.data.body.token)
             localStorage.setItem('userlist', res.config.data)
             this.$router.push({

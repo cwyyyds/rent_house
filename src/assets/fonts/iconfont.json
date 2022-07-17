@@ -1,0 +1,23 @@
+{
+  "id": "3527119",
+  "name": "我的收藏",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "11372655",
+      "name": "地图",
+      "font_class": "ditu",
+      "unicode": "e8ad",
+      "unicode_decimal": 59565
+    },
+    {
+      "icon_id": "14303348",
+      "name": "倒三角",
+      "font_class": "daosanjiao",
+      "unicode": "e74b",
+      "unicode_decimal": 59211
+    }
+  ]
+}

@@ -77,8 +77,7 @@ export default {
   data () {
     return {
       isShow: true,
-      unUserName: '游客',
-      newcode: ''
+      unUserName: ''
     }
   },
   methods: {
@@ -89,10 +88,10 @@ export default {
           message: '是否确认退出'
         })
         .then(() => {
-          // on confirm
-          localStorage.clear()
+          this.$store.commit('setUser', '')
+          localStorage.removeItem('userlist')
           this.unUserName = '游客'
-          this.isShow = true
+          this.isShow = !this.$store.state.user
         })
         .catch(() => {
           // on cancel
@@ -100,12 +99,10 @@ export default {
     }
   },
   created () {
-    if (localStorage.getItem('userlist')) {
-      this.unUserName = JSON.parse(localStorage.getItem('userlist')).username
-    }
-    if (this.$store.state.user) {
-      this.newcode = this.$store.state.user
-      this.isShow = false
+    this.isShow = !this.$store.state.user
+    const newname = JSON.parse(localStorage.getItem('userlist')).username
+    if (newname) {
+      this.unUserName = newname
     }
   }
 }
