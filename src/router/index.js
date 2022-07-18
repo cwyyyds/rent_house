@@ -40,6 +40,12 @@ const routes = [
         component: () => import('@/views/HomePage')
       }
     ]
+  },
+  // 城市
+  {
+    path: '/city',
+    name: 'city',
+    component: () => import('@/views/City')
   }
 ]
 

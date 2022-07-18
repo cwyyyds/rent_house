@@ -14,8 +14,8 @@
       class="homepage-search"
     >
       <template #label>
-        <div class="homepage-rotation-text">
-          北京 <span class="iconfont icon-daosanjiao"></span>
+        <div class="homepage-rotation-text" @click="cityFn">
+          {{ cityName }} <span class="iconfont icon-daosanjiao"></span>
         </div>
       </template>
 
@@ -105,6 +105,7 @@
 
 <script>
 export default {
+  name: '首页',
   data () {
     return {
       value: '',
@@ -112,12 +113,17 @@ export default {
         require('@/assets/homepage/1.png'),
         require('@/assets/homepage/2.png'),
         require('@/assets/homepage/3.png')
-      ]
+      ],
+      cityName: '北京'
     }
   },
   methods: {
     onSubmit (values) {
       console.log('submit', values)
+    },
+    cityFn () {
+      this.$router.push('/city')
+      this.$store.commit('setCity', this.cityName)
     }
   }
 }
