@@ -107,6 +107,7 @@ export default {
       this.FristPin.push(String.fromCharCode(97 + i))
     }
     this.city()
+    console.log(this.cityjson)
     this.hot()
   }
 }
